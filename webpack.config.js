@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 
 const port = process.env.PORT || 3000;
 
