@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
   profilePictureArtCard: {
     height: 400, 
     width: 400,
-    maxHeight: 400, 
-    maxWidth: 400,
-    boxShadow: "10px 10px 5px grey",
+    boxShadow: "5px 5px 5px black",
     borderRadius: 15,
     objectFit: 'None',
   },
- // other classes here
+  photoContainer: {
+    alignSelf: 'center'
+  }
 }));
 
 const slideshowPhotos = [
@@ -51,8 +51,9 @@ function PhotoDisplay(props) {
 
 export default function PhotoSlideshow(props) {
   const [index, setIndex]= useState(0)
+  const classes = useStyles();
 
-  return <Container>
+  return (<div className={classes.photoContainer}>
     <PhotoDisplay imagePath={slideshowPhotos[index].imagePath} alt={slideshowPhotos[index].prompt} />
-  </Container>
+  </div>)
 }

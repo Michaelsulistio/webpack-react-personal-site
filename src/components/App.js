@@ -1,25 +1,33 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
 import { makeStyles } from '@mui/styles';
 import PhotoSlideshow from './PhotoSlideshow';
 
 const useStyles = makeStyles((theme) => ({
+  bodyContainer: {
+    paddingTop: '100px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   headerContainer: {
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+
   },
   logoHeader: {
-    color: 'black',
-    textAlign: 'center',
-    fontSize: '72px',
+    color: '#D3D8DB',
+    textAlign: 'left',
+    fontSize: '48px',
     fontWeight: 'bold',
+    margin: '4px',
     fontFamily: ['Inter', 'sans-serif'],
   },
   introText: {
-    color: 'black',
+    color: '#D3D8DB',
     textAlign: 'left',
     fontSize: '18px',
     fontFamily: ['Inter', 'sans-serif'],
@@ -27,10 +35,22 @@ const useStyles = makeStyles((theme) => ({
     overflowWrap: 'break-word'
   },
   slideshowContainer: {
-    width: '400px',
-    height: '400px'
+   display: 'flex',
+   flexDirection: 'column',
+   textAlign: 'center'
+  },
+  slideshowHeader: {
+    color: '#D3D8DB',
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '8px',
+    fontFamily: ['Inter', 'sans-serif'],
   },
   footer: {
+    color: '#D3D8DB',
+    position: 'absolute',
+    bottom: '40px',
+    right: '50%',
     fontSize: '18px',
     textAlign: 'center'
   }
@@ -40,35 +60,35 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.headerContainer} column={1}>
-        <Box item xs={4}>
-          <Box>
-            <p className={classes.logoHeader}>Michael Sulist.io </p>
-            <p className={classes.introText}>
-              Hi! I'm a fullstack Software Engineer based in San Francisco.
-              I attended the Unviersity of Washington for Computer Science and graduated in 2020. Since then, 
-              I've worked at Meta as a fullstack Mobile developer, until I was laid off. 
-              <br /> <br />
-              I worked on the Messenger App and Facebook App with extensive experience in
-              <span style={{color: '#007AFF'}}> iOS (Objective-C/Swift)</span>,   
-              <span style={{color: '#a4c639'}}> Android(Java/Kotlin)</span>, and   
-              <span style={{color: '#61dafb'}}> React Native</span> development.
-            </p>
-          </Box>
-        </Box>
-        <Box className={classes.slideshowContainer} item xs={4}>
-          <PhotoSlideshow />
-        </Box>
-      {/* <Box className={classes.headerContainer}>
-        <Box>
-          <p className={classes.logoHeader}>Michael sulist.io </p>
-          <p className={classes.introText}>text</p>
-        </Box>
-        <PhotoSlideshow />
-      </Box>
+      <div>
+        <Grid container className={classes.bodyContainer} columns={{xs: 1, sm: 1, md: 12}}>
+            <Grid item xs={1} sm={4}>
+              <Box className={classes.headerContainer}>
+                <h1 className={classes.logoHeader}>Michael Sulist.io </h1>
+                <p className={classes.introText}>
+                  Hi! I'm a fullstack Software Engineer based in San Francisco.
+                  I attended the Unviersity of Washington for Computer Science and graduated in 2020. Since then, 
+                  I've worked at Meta as a fullstack Mobile developer, until I was laid off. 
+                  <br /> <br />
+                  I worked on the Messenger App and Facebook App with extensive experience in
+                  <span style={{color: '#007AFF'}}> iOS (Objective-C/Swift)</span>,   
+                  <span style={{color: '#a4c639'}}> Android(Java/Kotlin)</span>, and   
+                  <span style={{color: '#61dafb'}}> React Native</span> development.
+                </p>
+              </Box>
+            </Grid>
 
-      <Box className={classes.footer}> more to come!</Box> */}
-    </Box>
+            <Grid item xs={1} sm={4}>
+              <Box className={classes.slideshowContainer}>
+                <h1 className={classes.slideshowHeader}> AI Generated self-portraits </h1>
+                <PhotoSlideshow />
+              </Box>
+            </Grid>  
+        </Grid>
+        <div className={classes.footer}>
+          <Link color="inherit" href="https://www.linkedin.com/in/michael-sulistio-288b28132/">linkedin</Link> - <Link href="https://github.com/Michaelsulistio" color="inherit">github</Link>
+        </div>
+      </div>
   );
 };
 
