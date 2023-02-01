@@ -1,0 +1,7 @@
+html, body, #reactapp, .App {
+    height: 100%;
+}
+
+.App {
+    display: flex;
+}
