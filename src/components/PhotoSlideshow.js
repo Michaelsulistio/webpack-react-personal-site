@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: 'center'
   },
   photoHeader: {
-    color: '#D3D8DB',
+    color: 'black',
     fontSize: '18px',
     paddingTop: '12px'
   }
