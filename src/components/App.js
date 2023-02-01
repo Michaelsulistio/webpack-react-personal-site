@@ -1,58 +1,94 @@
 import React from 'react';
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Card from '@mui/material/Card';
-import { shadows } from '@mui/system';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
 import { makeStyles } from '@mui/styles';
+import PhotoSlideshow from './PhotoSlideshow';
 
 const useStyles = makeStyles((theme) => ({
-  profilePictureArtCard: {
-    height: 400, 
-    width: 400,
-    maxHeight: 400, 
-    maxWidth: 400,
-    boxShadow: "10px 10px 5px grey",
-    borderRadius: 15,
-    objectFit: 'None',
+  bodyContainer: {
+    paddingTop: '100px',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
- // other classes here
-}));
+  headerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
 
-function genAIArtCard(classes, image_path, alt) {
-  return <Box
-            sx={{
-              width: 400,
-              height: 400,
-            }}>
-            <img
-              src={image_path}
-              alt={alt}
-              className={classes.profilePictureArtCard}
-            />
-        </Box>;
-}
+  },
+  logoHeader: {
+    color: '#D3D8DB',
+    textAlign: 'left',
+    fontSize: '48px',
+    fontWeight: 'bold',
+    margin: '4px',
+    fontFamily: ['Inter', 'sans-serif'],
+  },
+  introText: {
+    color: '#D3D8DB',
+    textAlign: 'left',
+    fontSize: '18px',
+    fontFamily: ['Inter', 'sans-serif'],
+    inlineSize: '500px',
+    overflowWrap: 'break-word'
+  },
+  slideshowContainer: {
+   display: 'flex',
+   flexDirection: 'column',
+   textAlign: 'center'
+  },
+  slideshowHeader: {
+    color: '#D3D8DB',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    marginBottom: '8px',
+    fontFamily: ['Inter', 'sans-serif'],
+  },
+  footer: {
+    color: '#D3D8DB',
+    position: 'absolute',
+    bottom: '40px',
+    right: '50%',
+    fontSize: '18px',
+    textAlign: 'center'
+  }
+}));
 
 
 const App = () => {
   const classes = useStyles();
   return (
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          <Grid item xs>
-            {genAIArtCard(classes, "/static/images/futuristic_dev.png","Prompt: Futuristic Full-Stack Mobile Developer")}
-          </Grid>
-          <Grid item xs>
-            {genAIArtCard(classes, "/static/images/neckbeard_dev.png","Prompt: Futuristic Full-Stack Mobile Developer")}
-          </Grid>
-          <Grid item xs>
-            {genAIArtCard(classes, "/static/images/normal_dev.jpg","Prompt: Futuristic Full-Stack Mobile Developer")}
-          </Grid>
-      </Grid>
+      <div>
+        <Grid container className={classes.bodyContainer} columns={{xs: 1, sm: 1, md: 12}}>
+            <Grid item xs={1} sm={4}>
+              <Box className={classes.headerContainer}>
+                <h1 className={classes.logoHeader}>Michael Sulist.io </h1>
+                <p className={classes.introText}>
+                  Hi! I'm a fullstack Software Engineer based in San Francisco.
+                  I attended the Unviersity of Washington for Computer Science and graduated in 2020. Since then, 
+                  I've worked at Meta as a fullstack Mobile developer, until I was laid off. 
+                  <br /> <br />
+                  I worked on the Messenger App and Facebook App with extensive experience in
+                  <span style={{color: '#007AFF'}}> iOS (Objective-C/Swift)</span>,   
+                  <span style={{color: '#a4c639'}}> Android(Java/Kotlin)</span>, and   
+                  <span style={{color: '#61dafb'}}> React Native</span> development.
+                </p>
+              </Box>
+            </Grid>
+
+            <Grid item xs={1} sm={4}>
+              <Box className={classes.slideshowContainer}>
+                <h1 className={classes.slideshowHeader}> AI generated depictions of myself as... </h1>
+                <PhotoSlideshow />
+              </Box>
+            </Grid>  
+        </Grid>
+        <div className={classes.footer}>
+          <Link color="inherit" href="https://www.linkedin.com/in/michael-sulistio-288b28132/">linkedin</Link> - <Link href="https://github.com/Michaelsulistio" color="inherit">github</Link>
+        </div>
+      </div>
   );
 };
 
