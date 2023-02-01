@@ -14,12 +14,12 @@ const useStyles = makeStyles((theme) => ({
   headerContainer: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center',
 
   },
   logoHeader: {
-    color: '#D3D8DB',
+    color: 'black',
     textAlign: 'left',
     fontSize: '48px',
     fontWeight: 'bold',
@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: ['Inter', 'sans-serif'],
   },
   introText: {
-    color: '#D3D8DB',
+    color: 'black',
     textAlign: 'left',
     fontSize: '18px',
     fontFamily: ['Inter', 'sans-serif'],
-    inlineSize: '500px',
-    overflowWrap: 'break-word'
+    overflowWrap: 'break-word',
+    maxWidth: '500px'
   },
   slideshowContainer: {
    display: 'flex',
@@ -40,14 +40,14 @@ const useStyles = makeStyles((theme) => ({
    textAlign: 'center'
   },
   slideshowHeader: {
-    color: '#D3D8DB',
+    color: 'black',
     fontSize: '18px',
     fontWeight: 'bold',
     marginBottom: '8px',
     fontFamily: ['Inter', 'sans-serif'],
   },
   footer: {
-    color: '#D3D8DB',
+    color: 'black',
     position: 'absolute',
     bottom: '40px',
     right: '50%',
@@ -61,7 +61,7 @@ const App = () => {
   const classes = useStyles();
   return (
       <div>
-        <Grid container className={classes.bodyContainer} columns={{xs: 1, sm: 1, md: 12}}>
+        <Grid container direction={'row'} className={classes.bodyContainer} columns={{xs: 1, sm: 1, md: 8}}>
             <Grid item xs={1} sm={4}>
               <Box className={classes.headerContainer}>
                 <h1 className={classes.logoHeader}>Michael Sulist.io </h1>
