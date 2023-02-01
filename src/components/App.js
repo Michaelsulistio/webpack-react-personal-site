@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   slideshowHeader: {
     color: '#D3D8DB',
-    fontSize: '24px',
+    fontSize: '18px',
     fontWeight: 'bold',
     marginBottom: '8px',
     fontFamily: ['Inter', 'sans-serif'],
@@ -80,7 +80,7 @@ const App = () => {
 
             <Grid item xs={1} sm={4}>
               <Box className={classes.slideshowContainer}>
-                <h1 className={classes.slideshowHeader}> AI Generated self-portraits </h1>
+                <h1 className={classes.slideshowHeader}> AI generated depictions of myself as... </h1>
                 <PhotoSlideshow />
               </Box>
             </Grid>  
