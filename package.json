@@ -31,6 +31,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "webpack --config=./webpack.prod.js",
     "test": "jest"
   }
 }
