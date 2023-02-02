@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeAppBar from './HomeAppBar';
 import About from './About'
+import TicTacToe from './TicTacToe'
 import {
   BrowserRouter,
   Switch,
@@ -17,7 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<About />} />
-          <Route path="/tictactoe" element={<About />} />
+          <Route path="/tictactoe" element={<TicTacToe />} />
         </Routes>
       </div>
   );

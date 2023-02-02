@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import { makeStyles } from '@mui/styles';
-import Grid from '@mui/material/Grid';
-
 
 const useStyles = makeStyles((theme) => ({
   profilePictureArtCard: {

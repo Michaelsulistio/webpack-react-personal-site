@@ -6,11 +6,16 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjectsSharp';
 import { makeStyles } from '@mui/styles';
+import {
+    BrowserRouter,
+    Link,
+  } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-    toolbarButtons: {
+    navBarLink: {
         textDecorationThickness: '1px',
         textUnderlineOffset: '4px',
+        textDecoration: 'none',
     },
   }));
 
@@ -34,10 +39,16 @@ export default function HomeAppBar() {
             outline: 'solid'
         }}/>
         <Divider flexItem variant="middle" sx={{background: 'black', marginLeft: '20px', marginRight: '20px'}} orientation="vertical" />
-        <div className={classes.toolbarButtons}>
-            <Button sx={ButtonStyle}>about</Button>
-            <Button sx={ButtonStyle}>projects</Button>
-            <Button sx={ButtonStyle}>contact</Button>
+        <div>
+            <Link className={classes.navBarLink} to="/">
+                <Button sx={ButtonStyle}>about</Button>
+            </Link>
+            <Link className={classes.navBarLink} to="/projects">
+                <Button sx={ButtonStyle}>projects</Button>
+            </Link>
+            <Link className={classes.navBarLink} to="/tictactoe">
+                <Button sx={ButtonStyle}>contact</Button>
+            </Link>         
         </div>
         <Button variant="contained" sx={{':hover': {backgroundColor: 'black'}, backgroundColor: 'black', marginLeft: 'auto'}}> Play me!</Button>
         </Toolbar>

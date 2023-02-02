@@ -1,8 +1,27 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+    row: {
+        display: 'flex'
+    },
+    square: {
+        fontSize: '48px'
+    },
+    grid: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+}));
+
 
 
 function Square(props) {
-    return <div>{props.value}</div>
+    const styles = useStyles()
+
+    return <div className={styles.square}>{props.value}</div>
 }
 
 export default function TicTacToe() {
@@ -11,16 +30,18 @@ export default function TicTacToe() {
         [0, 0, 0],
         [0, 0, 0]
     ])
+    const styles = useStyles()
 
     const rows = grid.map((row) => {
-        return row.map((col) => {
-            return <Square value={grid[row][col]} />
+        const rowCells = row.map((col) => {
+            return <Square value={col} />
         })
+        return <div className={styles.row}>{rowCells}</div>
     })
 
 
     return (
-        <div className={"tictactoe-grid"}>
+        <div className={styles.grid}>
             {rows}
         </div>
     );
