@@ -26,7 +26,6 @@ const ButtonStyle = {
 
 export default function HomeAppBar() {
     const classes = useStyles()
-
     return (
     <Box sx={{ flexGrow: 1 }}>
         <AppBar style={{background: 'white', color: 'black' }} elevation={1} position="static">
