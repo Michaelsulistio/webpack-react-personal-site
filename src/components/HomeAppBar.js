@@ -2,12 +2,10 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjectsSharp';
 import { makeStyles } from '@mui/styles';
-import { styled } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     toolbarButtons: {
