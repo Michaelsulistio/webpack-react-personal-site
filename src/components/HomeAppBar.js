@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         textUnderlineOffset: '4px',
         textDecoration: 'none',
     },
+    playButton: {
+        marginLeft: 'auto'
+    },
   }));
 
 const ButtonStyle = {
@@ -46,11 +49,13 @@ export default function HomeAppBar() {
             <Link className={classes.navBarLink} to="/projects">
                 <Button sx={ButtonStyle}>projects</Button>
             </Link>
-            <Link className={classes.navBarLink} to="/tictactoe">
+            <Link className={classes.navBarLink} to="/contact">
                 <Button sx={ButtonStyle}>contact</Button>
             </Link>         
         </div>
-        <Button variant="contained" sx={{':hover': {backgroundColor: 'black'}, backgroundColor: 'black', marginLeft: 'auto'}}> Play me!</Button>
+        <Link className={classes.playButton} to="/tictactoe">
+            <Button variant="contained" sx={{':hover': {backgroundColor: 'black'}, backgroundColor: 'black', marginLeft: 'auto'}}> Play me!</Button>
+        </Link>
         </Toolbar>
         </AppBar>
     </Box>

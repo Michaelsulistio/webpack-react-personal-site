@@ -2,6 +2,8 @@ import React from 'react';
 import HomeAppBar from './HomeAppBar';
 import About from './About'
 import TicTacToe from './TicTacToe'
+import Projects from './Projects'
+import Contact from './Contact'
 import {
   BrowserRouter,
   Switch,
@@ -17,7 +19,8 @@ const App = () => {
         <HomeAppBar />
         <Routes>
           <Route path="/" element={<About />} />
-          <Route path="/projects" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/tictactoe" element={<TicTacToe />} />
         </Routes>
       </div>
