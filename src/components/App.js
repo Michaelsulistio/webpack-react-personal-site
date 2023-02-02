@@ -4,6 +4,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import { makeStyles } from '@mui/styles';
 import PhotoSlideshow from './PhotoSlideshow';
+import HomeAppBar from './HomeAppBar'
 
 const useStyles = makeStyles((theme) => ({
   bodyContainer: {
@@ -61,6 +62,7 @@ const App = () => {
   const classes = useStyles();
   return (
       <div>
+        <HomeAppBar />
         <Grid container direction={'row'} className={classes.bodyContainer} columns={{xs: 1, sm: 1, md: 8}}>
             <Grid item xs={1} sm={4}>
               <Box className={classes.headerContainer}>
